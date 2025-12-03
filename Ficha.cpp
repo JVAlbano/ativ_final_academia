@@ -35,6 +35,19 @@ void Ficha::adicionarExercicio(Exercicio* exercicio) {
     }
 }
 
+// Remover exercícios da ficha
+void Ficha::removerExercicio(int idExercicio) {
+    for (auto it = exercicios.begin(); it != exercicios.end(); ++it) {
+        if ((*it)->getId() == idExercicio) {
+            exercicios.erase(it);
+            std::cout << "Exercicio removido da ficha." << std::endl;
+            return;
+        }
+    }
+
+    std::cout << "Exercicio não encontrado na ficha." << std::endl;
+}
+
 // Exibir ficha completa com exercícios e totais
 void Ficha::exibirFicha() const {
     std::cout << "Ficha ID: " << id << " | Nome: " << nome << std::endl;

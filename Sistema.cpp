@@ -243,6 +243,37 @@ void Sistema::criarFicha() {
     pausar();
 }
 
+// Excluir uma ficha
+void Sistema::excluirFicha() {
+    if (fichas.empty()) {
+        std::cout << "Nenhuma ficha cadastrada." << std::endl;
+        pausar();
+        return;
+    }
+
+    std::cout << "Fichas cadastradas:" << std::endl;
+    for (auto f : fichas) {
+        std::cout << f->getId() << " - " << f->getNome() << std::endl;
+    }
+
+    int id;
+    std::cout << "Digite o ID da ficha que deseja excluir: ";
+    std::cin >> id;
+
+    for (auto it = fichas.begin(); it != fichas.end(); ++it) {
+        if ((*it)->getId() == id) {
+            delete *it;
+            fichas.erase(it);
+            std::cout << "Ficha removida com sucesso!" << std::endl;
+            pausar();
+            return;
+        }
+    }
+
+    std::cout << "Ficha nao encontrada!" << std::endl;
+    pausar();
+}
+
 // Adicionar exercício à ficha
 void Sistema::adicionarExercicioFicha() {
     if (fichas.empty()) {
@@ -283,6 +314,44 @@ void Sistema::adicionarExercicioFicha() {
     }
     pausar();
 }
+
+// Remover exercício da ficha
+void Sistema::removerExercicioDaFicha() {
+    if (fichas.empty()) {
+        std::cout << "Nenhuma ficha cadastrada." << std::endl;
+        pausar();
+        return;
+    }
+
+    std::cout << "Fichas disponiveis:" << std::endl;
+    for (auto f : fichas) {
+        std::cout << f->getId() << " - " << f->getNome() << std::endl;
+    }
+
+    int idFicha;
+    std::cout << "Escolha o ID da ficha: ";
+    std::cin >> idFicha;
+
+    Ficha* ficha = buscarFichaPorId(idFicha);
+    if (!ficha) {
+        std::cout << "Ficha nao encontrada." << std::endl;
+        pausar();
+        return;
+    }
+
+    std::cout << "Exercicios da ficha:" << std::endl;
+    for (auto ex : ficha->getExercicios()) {
+        std::cout << ex->getId() << " - " << ex->getNome() << std::endl;
+    }
+
+    int idEx;
+    std::cout << "Informe o ID do exercicio que deseja remover: ";
+    std::cin >> idEx;
+
+    ficha->removerExercicio(idEx);
+    pausar();
+}
+
 
 // Listar todas as fichas
 void Sistema::listarFichas() {

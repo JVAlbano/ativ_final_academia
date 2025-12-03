@@ -30,7 +30,7 @@ double Forca::calcularTempoEstimado() const {
     // (Séries × Repetições × 3 seg) + (Séries × Tempo de Descanso) -> resultado em segundos
     double segundos = static_cast<double>(series) * static_cast<double>(repeticoes) * 3.0
                       + static_cast<double>(series) * static_cast<double>(tempoDescanso);
-    return segundos / 60.0; // converter para minutos
+    return segundos / 60.0;
 }
 
 // Calcular calorias gastas

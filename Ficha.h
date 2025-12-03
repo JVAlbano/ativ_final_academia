@@ -21,6 +21,7 @@ public:
     ~Ficha();
 
     void adicionarExercicio(Exercicio* exercicio);
+    void removerExercicio(int idExercicio);
     void exibirFicha() const;
     
     double calcularTempoTotal() const;

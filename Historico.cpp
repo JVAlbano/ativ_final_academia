@@ -44,7 +44,7 @@ void Historico::carregarDeArquivo() {
         while (std::getline(ss, campo, ';')) {
             campos.push_back(campo);
         }
-        // Esperamos 5 campos: dataHora;idFicha;nomeFicha;tempo;calorias
+        // Espera entrada de 5 campos: dataHora;idFicha;nomeFicha;tempo;calorias
         if (campos.size() < 5) continue;
         RegistroTreino r;
         r.dataHora = campos[0];

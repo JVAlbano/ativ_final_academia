@@ -32,7 +32,9 @@ public:
     // Funcionalidades de Fichas
     void criarFicha();
     void adicionarExercicioFicha();
+    void removerExercicioDaFicha();
     void listarFichas();
+    void excluirFicha();
 
     // Execução
     void registrarTreino();

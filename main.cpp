@@ -45,13 +45,17 @@ int main() {
                 std::cout << "--- FICHAS DE TREINO ---" << std::endl;
                 std::cout << "1. Criar Nova Ficha" << std::endl;
                 std::cout << "2. Adicionar Exercicio na Ficha" << std::endl;
-                std::cout << "3. Visualizar Fichas" << std::endl;
+                std::cout << "3. Remover Exercicio da Ficha" << std::endl;
+                std::cout << "4. Visualizar Fichas" << std::endl;
+                std::cout << "5. Excluir Ficha" << std::endl;
                 std::cout << "Opcao: ";
                 std::cin >> subOpcao;
 
                 if (subOpcao == 1) sistema.criarFicha();
                 else if (subOpcao == 2) sistema.adicionarExercicioFicha();
-                else if (subOpcao == 3) sistema.listarFichas();
+                else if (subOpcao == 3) sistema.removerExercicioDaFicha();
+                else if (subOpcao == 4) sistema.listarFichas();
+                else if (subOpcao == 5) sistema.excluirFicha();
                 break;
             }
             case 3:
