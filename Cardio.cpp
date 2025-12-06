@@ -5,13 +5,11 @@
 // Construtor para novos cadastros
 Cardio::Cardio(std::string nome, int duracao, double caloriasPorMinuto) 
     : Exercicio(nome), duracao(duracao), caloriasPorMinuto(caloriasPorMinuto) {
-    // tudo atribuído na lista de inicialização
 }
 
 // Construtor para leitura de arquivo
 Cardio::Cardio(int id, std::string nome, bool ativo, int duracao, double caloriasPorMinuto)
     : Exercicio(id, nome, ativo), duracao(duracao), caloriasPorMinuto(caloriasPorMinuto) {
-    // nada mais
 }
 
 // Exibir detalhes do exercício
